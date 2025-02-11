@@ -1,0 +1,50 @@
+{
+  "name": "jamserve",
+  "version": "0.3.56",
+  "description": "Jambooks server",
+  "main": "index.js",
+  "author": "Fred Larsen <fredish@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "NODE_PATH=. node server.js",
+    "dev": "dotenvx run -- NODE_PATH=. CONF_ENV=dev NODE_ENV=production node --trace-warnings server.js",
+    "local": "NODE_PATH=. CONF_ENV=local NODE_ENV=development dotenvx run -- nodemon --watch . --watch '../shared' server.js",
+    "proxy": "NODE_PATH=. DEV=true nodemon proxy.js",
+    "build": "source $NVM_DIR/nvm.sh; nvm use stable; cd ..; vue-cli-service build",
+    "zip-project": "rm -f /tmp/jam-web-* && zip -x 'node_modules/*' -x '.git/*' -x '.elasticbeanstalk/*' -x '.idea/*' -x 'shared/node_modules/*' -r /tmp/jam-web-$npm_package_version.zip .",
+    "deploy-dev": "npm run zip-project && eb-deploy -a web -e web-dev-new -z /tmp/jam-web-$npm_package_version.zip -l jam-web-$npm_package_version -b elasticbeanstalk-us-west-2-417582660030 --region us-west-2 --wait-until-deployed --use-existing-app-version --skip-cleanup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.170.0",
+    "@aws-sdk/client-sqs": "^3.198.0",
+    "@aws-sdk/credential-providers": "^3.170.0",
+    "@aws-sdk/lib-storage": "^3.170.0",
+    "@sendgrid/mail": "^7.6.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bullmq": "^3.10.4",
+    "canvas": "^2.10.1",
+    "connect-history-api-fallback": "^1.6.0",
+    "connect-redis": "^6.1.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "https-proxy-agent": "^5.0.1",
+    "ioredis": "^5.0.4",
+    "konva": "^8.3.12",
+    "lodash": "^4.17.21",
+    "mongodb": "^3.7.3",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^3.3.4",
+    "node-fetch": "^2.6.7",
+    "polotno-node": "^0.3.14",
+    "shared": "file:shared",
+    "stripe": "^8.219.0",
+    "twilio": "^3.57.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "sharp": "^0.31.0"
+  }
+}
