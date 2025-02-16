@@ -1,4 +1,4 @@
-const PromptModel = require('shared/models')('Prompts');
+const PromptModel = require('@jambooks/shared/models')('Prompts');
 
 exports.list = async (req, res, next) => {
     try {

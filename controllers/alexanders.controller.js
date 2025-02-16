@@ -1,6 +1,6 @@
-const AlexLogModel = require('shared/models')('AlexLog');
-const orderService = require('shared/services/order.service');
-const emailService = require('shared/services/email.service');
+const AlexLogModel = require('@jambooks/shared/models')('AlexLog');
+const orderService = require('@jambooks/shared/services/order.service');
+const emailService = require('@jambooks/shared/services/email.service');
 
 // update order printingStatus and send the custom an email letting the know the dueDate and updated status.
 exports.printing = async (req, res, next) => {

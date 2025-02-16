@@ -1,5 +1,5 @@
 const express = require('./expressLoader');
-const mongo = require('shared/loaders/mongo.loader');
+const mongo = require('@jambooks/shared/loaders/mongo.loader');
 
 module.exports = async ({ expressApp }) => {
     await mongo();

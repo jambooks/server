@@ -1,9 +1,9 @@
-const authenticationService = require('shared/services/auth.services');
+const authenticationService = require('@jambooks/shared/services/auth.services');
 const bcrypt = require('bcryptjs');
-const config = require('shared/config');
-const emailService = require('shared/services/email.service');
-const messagingService = require('shared/services/')('Messaging');
-const userModel = require('shared/models')('User');
+const config = require('@jambooks/shared/config');
+const emailService = require('@jambooks/shared/services/email.service');
+const messagingService = require('@jambooks/shared/services/')('Messaging');
+const userModel = require('@jambooks/shared/models')('User');
 const { ObjectId } = require('mongodb')
 
 exports.forgot = async (req, res, next) => {

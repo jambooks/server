@@ -1,4 +1,4 @@
-const config = require('shared/config');
+const config = require('@jambooks/shared/config');
 
 module.exports = (req, res, next) => {
     const apiKey = req.headers['x-api-key'] || '';

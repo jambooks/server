@@ -1,5 +1,5 @@
-const config = require('shared/config');
-const PaymentService = require('shared/services')('Payment');
+const config = require('@jambooks/shared/config');
+const PaymentService = require('@jambooks/shared/services')('Payment');
 
 exports.cancel = async (req, res, next) => {
     try {

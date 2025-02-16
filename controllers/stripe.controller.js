@@ -1,9 +1,9 @@
-const StripeCSModel = require('shared/models')('StripeCheckoutSessions');
-const StripeLogModel = require('shared/models')('StripeLog');
-const { addJob } = require('shared/lib/bull');
-const orderService = require('shared/services/order.service');
-const stripeService = require('shared/services/stripe.service');
-const config = require('shared/config');
+const StripeCSModel = require('@jambooks/shared/models')('StripeCheckoutSessions');
+const StripeLogModel = require('@jambooks/shared/models')('StripeLog');
+const { addJob } = require('@jambooks/shared/lib/bull');
+const orderService = require('@jambooks/shared/services/order.service');
+const stripeService = require('@jambooks/shared/services/stripe.service');
+const config = require('@jambooks/shared/config');
 
 exports.webhook = async (req, res, next) => {
     try {

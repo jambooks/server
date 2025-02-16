@@ -1,12 +1,12 @@
-const OrderModel = require('shared/models')('Orders');
-const alexanderService = require('shared/services/alexanders.service');
-const awsService = require('shared/services/aws.service');
-const bookService = require('shared/services/book.service');
-const orderService = require('shared/services/order.service');
-const stripeService = require('shared/services/stripe.service');
-const userService = require('shared/services/user.service');
-const config = require('shared/config');
-const { getPromo } = require('shared/services/stripe.service');
+const OrderModel = require('@jambooks/shared/models')('Orders');
+const alexanderService = require('@jambooks/shared/services/alexanders.service');
+const awsService = require('@jambooks/shared/services/aws.service');
+const bookService = require('@jambooks/shared/services/book.service');
+const orderService = require('@jambooks/shared/services/order.service');
+const stripeService = require('@jambooks/shared/services/stripe.service');
+const userService = require('@jambooks/shared/services/user.service');
+const config = require('@jambooks/shared/config');
+const { getPromo } = require('@jambooks/shared/services/stripe.service');
 
 exports.index = async (req, res, next) => {
     try {

@@ -1,5 +1,5 @@
-const JamService = require('shared/services/jam.service');
-const MessagingService = require('shared/services')('Messaging');
+const JamService = require('@jambooks/shared/services/jam.service');
+const MessagingService = require('@jambooks/shared/services')('Messaging');
 
 exports.invite = async (req, res, next) => {
     try {

@@ -1,4 +1,4 @@
-const JamService = require('shared/services/jam.service');
+const JamService = require('@jambooks/shared/services/jam.service');
 
 module.exports = (projection) => {
     return async (req, res, next) => {

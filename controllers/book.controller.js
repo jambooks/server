@@ -1,11 +1,11 @@
-const MessageService = require('shared/services')('Messaging');
-const awsService = require('shared/services/aws.service');
-const bookService = require('shared/services/book.service');
-const emailService = require('shared/services/email.service');
-const jamService = require('shared/services/jam.service');
-const orderService = require('shared/services/order.service');
-const stripeService = require('shared/services/stripe.service');
-const config = require('shared/config');
+const MessageService = require('@jambooks/shared/services')('Messaging');
+const awsService = require('@jambooks/shared/services/aws.service');
+const bookService = require('@jambooks/shared/services/book.service');
+const emailService = require('@jambooks/shared/services/email.service');
+const jamService = require('@jambooks/shared/services/jam.service');
+const orderService = require('@jambooks/shared/services/order.service');
+const stripeService = require('@jambooks/shared/services/stripe.service');
+const config = require('@jambooks/shared/config');
 // const { nanoid } = require('nanoid');
 const sharp = require("sharp");
 

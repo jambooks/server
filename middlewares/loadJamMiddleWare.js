@@ -1,4 +1,4 @@
-const jamsModel = require('shared/models')('Jams');
+const jamsModel = require('@jambooks/shared/models')('Jams');
 
 module.exports = (projection) => {
   return async (req, res, next) => {

@@ -1,5 +1,5 @@
-const stripe = require('shared/lib/stripe');
-const userModel = require('shared/models')('User');
+const stripe = require('@jambooks/shared/lib/stripe');
+const userModel = require('@jambooks/shared/models')('User');
 
 exports.getStripeCustomer = async (req, res, next) => {
     try {

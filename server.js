@@ -1,5 +1,5 @@
 const express = require('express');
-const config = require('shared/config');
+const config = require('@jambooks/shared/config');
 
 const app = express();
 const http = require('http').Server(app);

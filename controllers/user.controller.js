@@ -1,4 +1,4 @@
-const userModel = require('shared/models')('User');
+const userModel = require('@jambooks/shared/models')('User');
 const { makePassword } = require('lib/passwd');
 const { ObjectId } = require('mongodb');
 

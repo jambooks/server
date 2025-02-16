@@ -1,4 +1,4 @@
-const orderService = require('shared/services/order.service');
+const orderService = require('@jambooks/shared/services/order.service');
 
 module.exports = (project) => {
     return async (req, res, next) => {

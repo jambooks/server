@@ -1,6 +1,6 @@
 const Redis = require('ioredis');
 const bodyParser = require('body-parser');
-const config = require('shared/config');
+const config = require('@jambooks/shared/config');
 const express = require('express');
 const history = require('connect-history-api-fallback');
 const routes = require('../routes');

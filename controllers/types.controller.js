@@ -1,5 +1,5 @@
-const TypeModel = require('shared/models')('Types');
-const PromptModel = require('shared/models')('Prompts');
+const TypeModel = require('@jambooks/shared/models')('Types');
+const PromptModel = require('@jambooks/shared/models')('Prompts');
 
 exports.list = async (req, res, next) => {
     try {

@@ -1,9 +1,9 @@
-const config = require('shared/config')
-const jamsModel = require('shared/models')('Jams');
-const messagingService = require('shared/services')('Messaging');
-const textsModel = require('shared/models')('Texts');
+const config = require('@jambooks/shared/config')
+const jamsModel = require('@jambooks/shared/models')('Jams');
+const messagingService = require('@jambooks/shared/services')('Messaging');
+const textsModel = require('@jambooks/shared/models')('Texts');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const { SendMessage } = require('shared/lib/sqs');
+const { SendMessage } = require('@jambooks/shared/lib/sqs');
 
 exports.callback = async (req, res, next) => {
     try {

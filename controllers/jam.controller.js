@@ -1,12 +1,12 @@
-const { Book } = require('shared/lib/book');
-const JamPromptService = require('shared/services/jam-prompt.service');
-const JamService = require('shared/services/jam.service');
-const MessagingService = require('shared/services')('Messaging');
-const awsService = require('shared/services/aws.service');
-const bookService = require('shared/services/book.service');
-const config = require('shared/config');
-const typesService = require('shared/services/types.service');
-const typeModel = require('shared/models')('Types');
+const { Book } = require('@jambooks/shared/lib/book');
+const JamPromptService = require('@jambooks/shared/services/jam-prompt.service');
+const JamService = require('@jambooks/shared/services/jam.service');
+const MessagingService = require('@jambooks/shared/services')('Messaging');
+const awsService = require('@jambooks/shared/services/aws.service');
+const bookService = require('@jambooks/shared/services/book.service');
+const config = require('@jambooks/shared/config');
+const typesService = require('@jambooks/shared/services/types.service');
+const typeModel = require('@jambooks/shared/models')('Types');
 
 exports.deleteJam = async (req, res, next) => {
     try {

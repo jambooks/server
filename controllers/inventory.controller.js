@@ -1,4 +1,4 @@
-const config = require('shared/config');
+const config = require('@jambooks/shared/config');
 
 exports.getSoftCoverBookPricing = (req, res, next) => {
     try {

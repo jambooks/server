@@ -1,4 +1,4 @@
-const { addJob } = require('shared/lib/bull');
+const { addJob } = require('@jambooks/shared/lib/bull');
 
 exports.bullSetup = async (req, res, next) => {
     try {
