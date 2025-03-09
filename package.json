@@ -1,6 +1,6 @@
 {
   "name": "@jambooks/server",
-  "version": "0.3.57",
+  "version": "0.3.58",
   "description": "Jambooks server",
   "main": "index.js",
   "author": "Fred Larsen <fredish@gmail.com>",
@@ -13,7 +13,7 @@
     "build": "source $NVM_DIR/nvm.sh; nvm use stable; cd ..; vue-cli-service build",
     "zip-project": "rm -f /tmp/jam-web-* && zip -x 'node_modules/*' -x '.git/*' -x '.elasticbeanstalk/*' -x '.idea/*' -x 'shared/node_modules/*' -r /tmp/jam-web-$npm_package_version.zip .",
     "server-deploy-dev-old": "npm run zip-project && eb-deploy -a web -e web-dev-new -z /tmp/jam-web-$npm_package_version.zip -l jam-web-$npm_package_version -b elasticbeanstalk-us-west-2-417582660030 --region us-west-2 --wait-until-deployed --use-existing-app-version --skip-cleanup",
-    "server-deploy-dev": "npm run zip-project && eb-deploy",
+    "server-deploy-dev": "eb deploy -v --label jam-web-$npm_package_version --staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -40,7 +40,6 @@
     "multer": "^1.4.5-lts.1",
     "nanoid": "^3.3.4",
     "node-fetch": "^2.6.7",
-    "polotno-node": "^0.3.14",
     "stripe": "^8.219.0",
     "twilio": "^3.57.0"
   },
