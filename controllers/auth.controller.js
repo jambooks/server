@@ -109,20 +109,22 @@ exports.logout = async (req, res) => {
 
 exports.join = async (req, res, next) => {
     try {
-        const user = await userModel.findOne({phone: req.body.phone});
+        const user = await userModel.findOne({email: req.body.email});
         if (user !== null) {
             next({message: 'register.alreadRegistered', status: 400});
         } else {
-            req.session.regCode = Math.floor(
-                Math.random() * (999999 - 100000) + 100000
-            );
+            await emailService.sendEmailConfirmationLink(user.email, user._id)
+            // req.session.regCode = Math.floor(
+            //     Math.random() * (999999 - 100000) + 100000
+            // );
 
-            messagingService.send(req.body.phone, 'Your JamBooks verification code is ' + req.session.regCode)
-                .then(() => {
-                    res.json({});
-                    console.log('COUNT:', messagingService.cnt);
-                })
-                .catch(err => next(err));
+            // messagingService.send(req.body.phone, 'Your JamBooks verification code is ' + req.session.regCode)
+            //     .then(() => {
+            //         res.json({});
+            //         console.log('COUNT:', messagingService.cnt);
+            //     })
+            //     .catch(err => next(err));
+            res.json({});
         }
     } catch (err) {
         return next(err);
