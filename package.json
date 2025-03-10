@@ -1,6 +1,6 @@
 {
   "name": "@jambooks/server",
-  "version": "0.3.59",
+  "version": "0.3.60",
   "description": "Jambooks server",
   "main": "index.js",
   "author": "Fred Larsen <fredish@gmail.com>",
