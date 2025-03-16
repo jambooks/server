@@ -10,3 +10,5 @@ public
 .env.production
 
 public/*
+
+.idea/*
